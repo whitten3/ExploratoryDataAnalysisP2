@@ -1,5 +1,9 @@
-NEI2<-subset(NEI, fips=="24510")
+png(file="~/coursera/plot2.png", width=480, height=480)
 
-plot(aggregate(Emissions~year, NEI2, sum), 
+baltimoreNEI<-subset(NEI, fips=="24510")
+
+plot(aggregate(Emissions~year, baltimoreNEI, sum), 
      main="Total PM2.5 Emissions, Baltimore City, MA",
      xlab="Year", ylab="Total Emissions (tons)")
+
+dev.off()
