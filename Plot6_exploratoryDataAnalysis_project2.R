@@ -13,9 +13,12 @@ citiesNEI<-subset(autosNEI, subset=
 
 plot<-qplot(year, Emissions, data=citiesNEI, facets=
               .~fips, col=fips, main=
-              "Motor Vehicle Emissions Comparison", xlab="Year",
-              ylab="Emissions(tons)" )
+              "Two City Motor Vehicle Emissions Comparison", 
+            xlab="Year",ylab="Emissions(tons)" )
 
-plot+stat_smooth(method="loess")
+plot+stat_smooth(method="loess") + theme(legend.position="none")
+
+names<-c("06037"="Los Angeles", "24510"="Baltimore")
+plot + facet_grid(facets=.~fips, labeller=as_labeller(names))
 
 dev.off()
