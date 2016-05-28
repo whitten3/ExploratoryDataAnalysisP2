@@ -11,7 +11,7 @@ unzip("./data/data.zip", exdir="./data")
 
 #open png device for creation of png file for this plot 
 #and save to working directory
-png(file="./plot2.png", width=480, height=480)
+png(file="./plot3.png", width=480, height=480)
 
 #read data from source file to be used for
 #creation of plot into two variables as described in project outline
